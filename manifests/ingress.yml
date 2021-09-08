@@ -1,0 +1,17 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+    name: "kube-b89f"
+    labels:
+        app: "kube-b89f"
+    annotations:
+        kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+    rules:
+        - host: blogpy-kube-b89f.8848850f3cad4a6a8afb.westeurope.aksapp.io
+          http:
+            paths:
+            - path: /
+              backend:
+                serviceName: "kube-b89f"
+                servicePort: 80
