@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "kube-b89f"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "kube-b89f"
+  template:
+    metadata:
+      labels:
+        app: "kube-b89f"
+    spec:
+      containers:
+        - name: "kube-b89f"
+          image: "devopsmoc.azurecr.io/kube"
+          ports:
+          - containerPort: 80
